@@ -1,0 +1,41 @@
+#Author: Coleton Watt
+# Date: 09/12/2020
+#Desc: some examples of data declarion
+
+.data
+
+question: .asciiz "What is your favorite color?:"
+result: .asciiz "Your favoirter number is: "
+
+
+number: .word 0
+
+
+.text
+
+
+# print("what favorite number");
+
+li $v0, 4
+la $a0, question
+syscall
+
+#inpit num = input
+li $v0, 5
+syscall #return is in $vo, save it
+add $s0, $v0, $zero #s0 = v0+zero
+
+
+#print(result);
+li $v0, 4
+la $a0, result
+syscall 
+#print(number);
+li $v0, 1
+move $a0, $s0 # a0 = s0
+syscall 
+
+#exit 0
+
+li $v0, 10
+syscall 

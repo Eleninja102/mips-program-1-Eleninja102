@@ -1,0 +1,21 @@
+# AUTHOR: COLETON WATT
+# DATE: 2022-08-31
+# DESCRIPTION: HELLO WOLRD CS2810 PROGRAM
+
+
+# Memory segmetn for varibles
+.data 
+name: .asciiz "Hello COLETON WATT'S World" #string name = "Waldo"
+
+
+
+# Memory segment for intrusctions
+.text
+#print(name);
+li $v0, 4 #load immedite value "li", $v0 = 4
+la $a0, name #load address of string $a0
+syscall
+
+#exit 0 
+li $v0, 10 #exit code load 10 v0  syscall
+syscall

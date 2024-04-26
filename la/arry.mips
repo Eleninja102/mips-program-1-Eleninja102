@@ -1,0 +1,23 @@
+#Author: Coleton Watt
+# Date: 09/12/2020
+#Desc: some examples of data declarion
+
+.data 
+
+#each memeber is 4 bits
+numbers: .word 10, 20, 30, 40, 50
+
+.text
+
+#print number 2
+li $v0, 1
+lw $a0, numbers+8 #ouput 30
+syscall 
+#print number 3
+la $t0, numbers
+li $v0, 1
+lw $a0, 12($t0) #ouput 40
+syscall 
+
+li $v0, 10
+syscall 
